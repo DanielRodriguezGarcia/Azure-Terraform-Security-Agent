@@ -19,6 +19,44 @@ Agente autonomo basado en IA (Google Gemini) disenado para automatizar el ciclo 
 ```text
 ├── terraform/          # Archivos .tf vulnerables (fuente)
 ├── revision/           # Infraestructura corregida y validada
+├── claves/             # Guardar la API
 ├── agente_devsecops.py # El nucleo del agente de IA
 ├── informe_auditoria.md# Reporte tecnico de cambios aplicados
 └── README.md
+```
+# Configuración y Uso
+ 
+## 1. Prerrequisitos
+ 
+- Tener instalado Terraform en el sistema.
+- Tener una cuenta de Azure configurada en tu terminal mediante el comando:
+```bash
+az login
+```
+ 
+## 2. Instalación
+ 
+Asegúrate de tener instalada la librería necesaria para la comunicación con la API:
+ 
+```bash
+pip install google-generativeai
+```
+ 
+## 3. Ejecución del Agente
+ 
+1. Edita el archivo `agente_devsecops.py` e inserta tu `API_KEY` de Google Gemini en la variable correspondiente.
+2. Coloca tus archivos de infraestructura `.tf` dentro de la carpeta `/terraform`.
+3. Ejecuta el agente desde la raíz del proyecto:
+```bash
+python agente_devsecops.py
+```
+ 
+---
+ 
+## ¿Por qué este proyecto?
+ 
+Este agente soluciona la fricción entre la velocidad de despliegue y la seguridad. Permite a los equipos de desarrollo desplegar infraestructura segura sin necesidad de ser expertos en seguridad, eliminando el error humano y manteniendo un registro auditable de todos los cambios realizados.
+ 
+---
+ 
+*Desarrollado como Proyecto de Fin de Máster — Daniel Rodríguez García*
