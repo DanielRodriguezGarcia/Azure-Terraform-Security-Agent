@@ -1,0 +1,1 @@
+En este directorio pon tu terraform
